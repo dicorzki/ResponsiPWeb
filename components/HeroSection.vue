@@ -14,8 +14,8 @@
                       <h4>Dico Fathatul Rizki</h4>
                       <p class="text-secondary mb-1">Budak Agency</p>
                       <p class="text-muted font-size-sm">Yogyakarta, Indonesia</p>
-                      <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-outline-primary">Message</button>
+                      <a href = "https://www.instagram.com/dicorzki/" class="btn btn-primary">Follow</a>
+                      <a href = "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=dicofr6681@gmail.com/" class="btn btn-outline-primary">Message</a>
                     </div>
                   </div>
                 </div>

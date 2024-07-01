@@ -382,6 +382,9 @@ function defineCachedEventHandler(handler, opts = defaultCacheOptions) {
         fetch: globalThis.$fetch
       });
       event.context = incomingEvent.context;
+      event.context.cache = {
+        options: _opts
+      };
       const body = await handler(event) || _resSendBody;
       const headers = event.node.res.getHeaders();
       headers.etag = String(
@@ -622,7 +625,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _vueXJpX5Iq = (nitroApp) => {
+const _LzFleIOAZd = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -690,7 +693,7 @@ function onConsoleLog(callback) {
 
 const plugins = [
   _sdjJUUUqpi,
-_vueXJpX5Iq
+_LzFleIOAZd
 ];
 
 const scheduledTasks = false;
@@ -731,8 +734,9 @@ async function runTask(name, {
 }
 
 function defineRenderHandler(handler) {
+  const runtimeConfig = useRuntimeConfig();
   return eventHandler(async (event) => {
-    if (event.path.endsWith("/favicon.ico")) {
+    if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
       setResponseHeader(event, "Content-Type", "image/x-icon");
       return send(
         event,
@@ -820,11 +824,11 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
-const _lazy_kv54wo = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_mJRGNX = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_kv54wo, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_kv54wo, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_mJRGNX, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_mJRGNX, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

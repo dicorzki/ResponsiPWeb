@@ -2,6 +2,7 @@
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noEmit": true,
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -71,10 +72,10 @@
         "../node_modules/@nuxt/schema"
       ],
       "nuxt": [
-        "../node_modules/nuxt"
+        "../node_modules/.pnpm/nuxt@3.12.2_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.9_encoding@0.1.1_l4m7etdf4frcmtmpt5k3cpc3gi/node_modules/nuxt"
       ],
       "#internal/nuxt/paths": [
-        "../node_modules/nuxt/dist/core/runtime/nitro/paths"
+        "../node_modules/.pnpm/nuxt@3.12.2_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.9_encoding@0.1.1_l4m7etdf4frcmtmpt5k3cpc3gi/node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
         "./.."
@@ -109,7 +110,7 @@
   ],
   "exclude": [
     "../node_modules",
-    "../node_modules/nuxt/node_modules",
+    "../node_modules/.pnpm/nuxt@3.12.2_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.9_encoding@0.1.1_l4m7etdf4frcmtmpt5k3cpc3gi/node_modules/nuxt/node_modules",
     "../dist"
   ]
 }
